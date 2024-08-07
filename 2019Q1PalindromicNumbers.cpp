@@ -17,7 +17,6 @@ int main() {
         if (n == rev)
         {
             found = true;
-            break;
         }
     }
     cout << orig;
