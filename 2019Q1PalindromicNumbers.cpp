@@ -1,23 +1,27 @@
+#include <cstdint>
 #include <iostream>
 using namespace std;
 
 int main() {
-    int orig = 0;
+    unsigned long long ans = 0;
+    cin >> ans;
+    unsigned long long num = ans;
+    unsigned long long n = num;
     bool found = false;
-    cin >> orig;
-    for (orig = orig + 1; (found = false); orig++) {
-        int n, num = orig;
-        int digit, rev = 0;
+    do {
+        n = n + 1;
+        num = n;
+        unsigned long long digit, rev = 0;
         do {
-        digit = num % 10;
-        rev = (rev * 10) + digit;
-        num = num / 10;
+            digit = num % 10;
+            rev = (rev * 10) + digit;
+            num = num / 10;
         } while (num != 0);
-        
+
         if (n == rev)
         {
             found = true;
         }
-    }
-    cout << orig;
+    } while (found == false);
+    cout << n;
 }
